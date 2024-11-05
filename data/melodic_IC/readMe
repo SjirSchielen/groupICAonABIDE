@@ -1,1 +1,2 @@
-
+In this folder, each of the output components of group ICA using FSL's MELODIC can be found. Note that some components contain noise. 
+The file RSNs32.xlsx contains information on which components we identified to be resting-state networks. 
