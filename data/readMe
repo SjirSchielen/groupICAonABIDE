@@ -1,0 +1,19 @@
+This readMe file serves as an overview of the data present in this folder. 
+
+
+ABIDE.zip: The main data is stored in this zip file. It contains two separate zip files, one for each version of ABIDE (ABIDE_I.zip and ABIDE_II.zip). Each of these zip files contains folders per site which,
+in turn, contain the ICA time series resulting from dual regression. These files are named 'dr_stage1_subjectXXXXXXX.txt', where XXXXXXX is the ID of the participant which corresponds to the original ABIDE IDs.
+These files are structured according to the 32 components that were used in group ICA. In the text file, each column is the dual regressed time series of the subject corresponding to the ICA component. 
+An overview of the identified resting-state networks and their indices (starting from 1) is provided in the 'RSNs32.xlsx' file which can be found in supportingFiles.zip. Example: the Anterior Default Mode Network is 
+identified in component 1, therefore the very first column of each 'dr_stage1_subjectXXXXXXX.txt' file represents the subject's activity of that network. 
+If indexing starts from 1, then column 1 corresponds to ICA component 1. If indexing starts from zero, then column 0 corresponds to ICA component 1. 
+Per site (or sample per site if multiple were uploaded, e.g. University_of_Michigan_Sample_1 and University_of_Michigan_Sample_2), there is also the phenotypic.csv file which contains phenotypic information, e.g. 
+the diagnostic label. Sample Python code on how to read this data is provided in the code folder: code/phenotypicDataLoader.ipynb.
+
+supportingFiles.zip: Files that contain information about the dataset (some of which are used in the code) can be found in this zip file. It contains a file with a summary of imaging protocols for each version
+of ABIDE: 'ABIDE1_func_im_prot.xlsx' and 'ABIDE2_func_im_prot.xlsx'. These files are used in the preprocessing code to supply information necessary for some preprocessing steps. It also contains the 'RSNs32.xlsx' file,
+which indicates which components we identified to correspond to networks (also described in the paragraph above). Finally, the framewise displacements (FDs) are provided in the 'FD.csv' file. The first row contains column
+titles and subsequent rows are subject entries. This file is also read in phenotypicDataLoader.ipynb. 
+
+melodic_IC: This folder contains each independent component separately. Note that not all of these are networks as some correspond to noise. It is possible to go through the components and identify resting-state networks
+yourself. The dataset can then still be used with the components you selected. 
