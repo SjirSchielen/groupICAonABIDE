@@ -1,0 +1,24 @@
+This folder contains the subfolders: 'Matlab', 'Python', 'and ICA_AROMA_MASKS'.
+
+All Python parts and the 'ICA_AROMA_MASKS' follow the original implementation of ICA-AROMA:
+https://github.com/maartenmennes/ICA-AROMA. The only adaptation made here is that the
+ICA-AROMA.py and the ICA_AROMA_FUNCTIONS.py scripts are changed to use FSL in Windows
+subsystem for Linux. This change is only made for the case in which this dataset is run (
+2x2x2 mm voxels in MNI space). If you do not use Windows subsystem for Linux or you want to
+run different parts of the script, it is best to use the original scripts. Using the scripts 
+provided here will require to change the paths in the scripts. 
+
+The Matlab folder contains the Matlab code used for preprocessing. These scripts were made by
+Sjir Schielen and Jesper Pilmeyer based on work by Stephan Heunis:
+ https://zenodo.org/doi/10.5281/zenodo.4527532 . We used these files as a basis for many functions.
+
+If you want to use the code provided on this GitHub page, it involves changing the file paths
+in your desired way. The main preprocessing script is preprocess_ABIDE_realignmentfirst.m, which
+involves all the steps of taking a raw functional and T1-weighted scan to yield a preprocessed
+functional scan. The preprocessed volumes were used in FSL's MELODIC, which was run from the script
+'groupMelodic.m', where the mask called 'groupMask.nii' was used. The output of groupMelodic.m
+and the preprocessed volumes were used in dual regression to obtain the time series provided
+ in groupICAonABIDE/data/ABIDE.zip. 
+
+Additionally, there is the 'phenotypicDataLoader.ipynb' which contains sample Python code to 
+read the phenotypic information that is also provided in groupICAonABIDE/data/ABIDE.zip. 
