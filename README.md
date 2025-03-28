@@ -14,3 +14,6 @@ More information can be found in the 'readMe' file located in the 'code' folder.
 ## Software versions
 Matlab scripts were run in Matlab 2023b with SPM12. 
 FSL version 6.0 was run in Windows subsystem for Linux.
+
+## Zenodo DOI
+10.5281/zenodo.15100690
