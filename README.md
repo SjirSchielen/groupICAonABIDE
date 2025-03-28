@@ -17,3 +17,4 @@ FSL version 6.0 was run in Windows subsystem for Linux.
 
 ## Zenodo DOI
 10.5281/zenodo.15100690
+https://doi.org/10.5281/zenodo.15100689
